@@ -24,3 +24,17 @@ WHERE
     users.id = 435
 GROUP BY
     users.id;
+
+-- Exercise 4
+SELECT
+    MAX(jobs."salary") AS "maximumSalary",
+    roles."name" AS "role"
+FROM
+    jobs
+    JOIN roles ON roles."id" = jobs."roleId"
+where
+    jobs."active" = TRUE
+GROUP BY
+    roles."name"
+ORDER BY
+    "maximumSalary" ASC;
